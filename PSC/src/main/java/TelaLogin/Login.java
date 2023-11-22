@@ -31,7 +31,6 @@ public class Login extends javax.swing.JFrame {
         txtUser = new javax.swing.JTextField();
         txtSenha = new javax.swing.JTextField();
         entrarButton = new javax.swing.JButton();
-        imgFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela de Login");
@@ -55,10 +54,6 @@ public class Login extends javax.swing.JFrame {
         entrarButton.setText("Entrar");
         getContentPane().add(entrarButton);
         entrarButton.setBounds(212, 200, 72, 23);
-
-        imgFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/1698186741616.png"))); // NOI18N
-        getContentPane().add(imgFundo);
-        imgFundo.setBounds(-280, -50, 720, 450);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -94,7 +89,6 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton entrarButton;
-    private javax.swing.JLabel imgFundo;
     private javax.swing.JLabel senha;
     private javax.swing.JTextField txtSenha;
     private javax.swing.JTextField txtUser;

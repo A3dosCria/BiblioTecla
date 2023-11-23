@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package TelaADM;
+package View;
 
 /**
  *
@@ -40,49 +40,62 @@ public class ADM extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
+        jComboBox5 = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
+        jComboBox4 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("CADASTRO DE USUÁRIOS");
-        setMinimumSize(new java.awt.Dimension(600, 650));
+        setMinimumSize(new java.awt.Dimension(540, 560));
         setResizable(false);
         getContentPane().setLayout(null);
 
-        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("NOME");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(130, 70, 70, 30);
+        jLabel2.setBounds(80, 30, 80, 30);
 
         jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(jTextPane1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(130, 100, 330, 30);
+        jScrollPane1.setBounds(80, 60, 330, 30);
 
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("IDADE");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(130, 140, 33, 16);
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(130, 160, 60, 30);
+        jLabel1.setBounds(80, 120, 60, 16);
 
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(80, 140, 60, 30);
+
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("SEXO");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(290, 140, 28, 16);
+        jLabel3.setBounds(240, 120, 70, 16);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminino", "Prefiro não informar", " " }));
         getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(290, 160, 72, 30);
+        jComboBox1.setBounds(240, 140, 170, 30);
 
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("LIVRO PREFERIDO 1");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(130, 210, 110, 20);
+        jLabel4.setBounds(80, 190, 140, 20);
         getContentPane().add(jTextField2);
-        jTextField2.setBounds(130, 230, 330, 30);
+        jTextField2.setBounds(80, 210, 330, 30);
 
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("LIVRO PREFERIDO 2");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(130, 340, 110, 20);
+        jLabel5.setBounds(80, 330, 130, 20);
 
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,27 +103,42 @@ public class ADM extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField3);
-        jTextField3.setBounds(130, 360, 330, 30);
+        jTextField3.setBounds(80, 350, 330, 30);
 
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("GÊNERO LIVRO 1");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(130, 270, 110, 16);
+        jLabel6.setBounds(80, 270, 130, 16);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Romance", "Ficção", "Técnico" }));
         getContentPane().add(jComboBox2);
-        jComboBox2.setBounds(130, 290, 72, 22);
+        jComboBox2.setBounds(80, 290, 110, 22);
 
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("GÊNERO LIVRO 2");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(130, 410, 100, 16);
-
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jComboBox3);
-        jComboBox3.setBounds(130, 430, 72, 22);
+        jLabel7.setBounds(80, 400, 120, 16);
 
         jButton1.setText("CADASTRAR USUÁRIO");
         getContentPane().add(jButton1);
-        jButton1.setBounds(220, 490, 170, 40);
+        jButton1.setBounds(180, 460, 170, 40);
+
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Romance", "Ficção", "Técnico" }));
+        getContentPane().add(jComboBox5);
+        jComboBox5.setBounds(80, 420, 110, 22);
+
+        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rayni\\Documents\\NetBeansProjects\\Projeto A3\\BiblioTecla\\PSC\\src\\main\\java\\Lib\\OIG (1).png")); // NOI18N
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(-80, 0, 640, 550);
+
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Romance", "Ficção", "Técnico" }));
+        jComboBox4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox4);
+        jComboBox4.setBounds(80, 290, 110, 22);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -118,6 +146,14 @@ public class ADM extends javax.swing.JFrame {
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,7 +194,8 @@ public class ADM extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox4;
+    private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -166,6 +203,7 @@ public class ADM extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;

@@ -5,7 +5,7 @@
 package com.usjt.a32023;
 
 import SQLConnect.ConnectMSQL;
-import TelaLogin.Login;
+import View.Login;
 
 /**
  *

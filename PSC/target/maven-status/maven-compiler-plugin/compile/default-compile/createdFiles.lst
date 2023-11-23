@@ -1,3 +1,15 @@
-TelaLogin\Login.class
+View\ADM.class
+View\ADM$1.class
+View\Usuario$4.class
+View\Usuario.class
+View\ADM$2.class
+View\ListaLivros$2.class
+View\Usuario$2.class
+View\Login.class
+View\Usuario$1.class
+View\ADM$3.class
 com\usjt\a32023\A32023.class
+View\Usuario$3.class
+View\ListaLivros$1.class
 SQLConnect\ConnectMSQL.class
+View\ListaLivros.class

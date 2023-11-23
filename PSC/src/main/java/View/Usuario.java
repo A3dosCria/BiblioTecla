@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package TelaUsuario;
+package View;
 
 /**
  *
@@ -36,16 +36,18 @@ public class Usuario extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("CADASTROS DE LIVROS");
-        setMinimumSize(new java.awt.Dimension(500, 550));
+        setMinimumSize(new java.awt.Dimension(539, 513));
         setResizable(false);
         getContentPane().setLayout(null);
 
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("TÍTULO");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(84, 120, 38, 16);
+        jLabel2.setBounds(100, 120, 38, 16);
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -53,11 +55,12 @@ public class Usuario extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(84, 142, 330, 22);
+        jTextField1.setBounds(100, 140, 330, 22);
 
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("AUTOR ");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(84, 195, 41, 16);
+        jLabel3.setBounds(100, 190, 41, 16);
 
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,22 +68,25 @@ public class Usuario extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField2);
-        jTextField2.setBounds(84, 217, 330, 22);
+        jTextField2.setBounds(100, 210, 330, 22);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("CADASTROS DE LIVROS");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(155, 69, 202, 25);
+        jLabel4.setBounds(160, 60, 202, 25);
 
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("GÊNERO");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(84, 266, 45, 16);
+        jLabel5.setBounds(100, 270, 45, 16);
         getContentPane().add(jTextField3);
-        jTextField3.setBounds(84, 288, 330, 22);
+        jTextField3.setBounds(100, 290, 330, 22);
 
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("NOTA DE 0 A 10");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(84, 328, 84, 16);
+        jLabel6.setBounds(100, 340, 84, 16);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -89,11 +95,15 @@ public class Usuario extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(84, 350, 72, 22);
+        jComboBox1.setBounds(100, 360, 72, 22);
 
         jButton1.setText("CADASTRAR LIVRO");
         getContentPane().add(jButton1);
         jButton1.setBounds(180, 400, 169, 40);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Lib/OIG (1).png"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, -20, 560, 540);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -148,6 +158,7 @@ public class Usuario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

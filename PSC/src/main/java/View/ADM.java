@@ -33,10 +33,6 @@ public class ADM extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
@@ -47,7 +43,11 @@ public class ADM extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("CADASTRO DE USUÁRIOS");
+<<<<<<< HEAD:PSC/src/main/java/View/ADM.java
         setMinimumSize(new java.awt.Dimension(540, 560));
+=======
+        setMinimumSize(new java.awt.Dimension(450, 500));
+>>>>>>> ce8188b4a97d6dccc1935e67f2ad6990d1999e91:PSC/src/main/java/TelaADM/ADM.java
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -55,17 +55,26 @@ public class ADM extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("NOME");
         getContentPane().add(jLabel2);
+<<<<<<< HEAD:PSC/src/main/java/View/ADM.java
         jLabel2.setBounds(80, 30, 80, 30);
+=======
+        jLabel2.setBounds(70, 70, 70, 30);
+>>>>>>> ce8188b4a97d6dccc1935e67f2ad6990d1999e91:PSC/src/main/java/TelaADM/ADM.java
 
         jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(jTextPane1);
 
         getContentPane().add(jScrollPane1);
+<<<<<<< HEAD:PSC/src/main/java/View/ADM.java
         jScrollPane1.setBounds(80, 60, 330, 30);
+=======
+        jScrollPane1.setBounds(70, 100, 330, 30);
+>>>>>>> ce8188b4a97d6dccc1935e67f2ad6990d1999e91:PSC/src/main/java/TelaADM/ADM.java
 
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("IDADE");
         getContentPane().add(jLabel1);
+<<<<<<< HEAD:PSC/src/main/java/View/ADM.java
         jLabel1.setBounds(80, 120, 60, 16);
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -75,10 +84,16 @@ public class ADM extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField1);
         jTextField1.setBounds(80, 140, 60, 30);
+=======
+        jLabel1.setBounds(70, 150, 33, 16);
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(70, 170, 60, 30);
+>>>>>>> ce8188b4a97d6dccc1935e67f2ad6990d1999e91:PSC/src/main/java/TelaADM/ADM.java
 
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("SEXO");
         getContentPane().add(jLabel3);
+<<<<<<< HEAD:PSC/src/main/java/View/ADM.java
         jLabel3.setBounds(240, 120, 70, 16);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminino", "Prefiro não informar", " " }));
@@ -104,19 +119,35 @@ public class ADM extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField3);
         jTextField3.setBounds(80, 350, 330, 30);
+=======
+        jLabel3.setBounds(260, 150, 28, 16);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Masculino", "Feminino", "Prefiro não informar" }));
+        getContentPane().add(jComboBox1);
+        jComboBox1.setBounds(260, 170, 120, 30);
+>>>>>>> ce8188b4a97d6dccc1935e67f2ad6990d1999e91:PSC/src/main/java/TelaADM/ADM.java
 
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("GÊNERO LIVRO 1");
         getContentPane().add(jLabel6);
+<<<<<<< HEAD:PSC/src/main/java/View/ADM.java
         jLabel6.setBounds(80, 270, 130, 16);
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Romance", "Ficção", "Técnico" }));
         getContentPane().add(jComboBox2);
         jComboBox2.setBounds(80, 290, 110, 22);
+=======
+        jLabel6.setBounds(70, 230, 110, 16);
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Romance", "Ficção", "Técnico" }));
+        getContentPane().add(jComboBox2);
+        jComboBox2.setBounds(70, 250, 100, 22);
+>>>>>>> ce8188b4a97d6dccc1935e67f2ad6990d1999e91:PSC/src/main/java/TelaADM/ADM.java
 
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("GÊNERO LIVRO 2");
         getContentPane().add(jLabel7);
+<<<<<<< HEAD:PSC/src/main/java/View/ADM.java
         jLabel7.setBounds(80, 400, 120, 16);
 
         jButton1.setText("CADASTRAR USUÁRIO");
@@ -139,10 +170,22 @@ public class ADM extends javax.swing.JFrame {
         });
         getContentPane().add(jComboBox4);
         jComboBox4.setBounds(80, 290, 110, 22);
+=======
+        jLabel7.setBounds(70, 300, 100, 16);
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Romance", "Ficção", "Técnico" }));
+        getContentPane().add(jComboBox3);
+        jComboBox3.setBounds(70, 320, 110, 22);
+
+        jButton1.setText("CADASTRAR USUÁRIO");
+        getContentPane().add(jButton1);
+        jButton1.setBounds(160, 370, 170, 40);
+>>>>>>> ce8188b4a97d6dccc1935e67f2ad6990d1999e91:PSC/src/main/java/TelaADM/ADM.java
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+<<<<<<< HEAD:PSC/src/main/java/View/ADM.java
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
@@ -155,6 +198,8 @@ public class ADM extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox4ActionPerformed
 
+=======
+>>>>>>> ce8188b4a97d6dccc1935e67f2ad6990d1999e91:PSC/src/main/java/TelaADM/ADM.java
     /**
      * @param args the command line arguments
      */
@@ -199,15 +244,11 @@ public class ADM extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 }

@@ -26,26 +26,26 @@ public class ListaLivros extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        scrollList = new javax.swing.JScrollPane();
+        bookList = new javax.swing.JList<>();
         addBookButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        labelList = new javax.swing.JLabel();
+        imgFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("BiblioTecla");
         setMinimumSize(new java.awt.Dimension(540, 420));
         getContentPane().setLayout(null);
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        bookList.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        scrollList.setViewportView(bookList);
 
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(44, 120, 437, 192);
+        getContentPane().add(scrollList);
+        scrollList.setBounds(44, 120, 437, 192);
 
         addBookButton.setText("Adicionar Livro");
         addBookButton.addActionListener(new java.awt.event.ActionListener() {
@@ -56,15 +56,15 @@ public class ListaLivros extends javax.swing.JFrame {
         getContentPane().add(addBookButton);
         addBookButton.setBounds(350, 330, 130, 23);
 
-        jLabel1.setText("Gerencie Seus Livros:");
-        jLabel1.setName(""); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(50, 96, 170, 20);
+        labelList.setText("Gerencie Seus Livros:");
+        labelList.setName(""); // NOI18N
+        getContentPane().add(labelList);
+        labelList.setBounds(50, 96, 170, 20);
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\RENNAN\\OneDrive\\Documentos\\NetBeansProjects\\BiblioTecla\\PSC\\src\\main\\java\\Lib\\OIG (1).png")); // NOI18N
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(-140, -350, 830, 750);
+        imgFundo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        imgFundo.setIcon(new javax.swing.ImageIcon("C:\\Users\\RENNAN\\OneDrive\\Documentos\\NetBeansProjects\\BiblioTecla\\PSC\\src\\main\\java\\Lib\\OIG (1).png")); // NOI18N
+        getContentPane().add(imgFundo);
+        imgFundo.setBounds(-140, -350, 830, 750);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -110,9 +110,9 @@ public class ListaLivros extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBookButton;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JList<String> bookList;
+    private javax.swing.JLabel imgFundo;
+    private javax.swing.JLabel labelList;
+    private javax.swing.JScrollPane scrollList;
     // End of variables declaration//GEN-END:variables
 }

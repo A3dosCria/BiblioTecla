@@ -26,37 +26,54 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        txtSenha = new javax.swing.JTextField();
         user = new javax.swing.JLabel();
         senha = new javax.swing.JLabel();
         txtUser = new javax.swing.JTextField();
-        txtSenha = new javax.swing.JTextField();
         entrarButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela de Login");
         setBackground(new java.awt.Color(255, 255, 255));
-        setMinimumSize(new java.awt.Dimension(400, 350));
+        setLocation(new java.awt.Point(550, 250));
+        setMinimumSize(new java.awt.Dimension(310, 250));
         setResizable(false);
         getContentPane().setLayout(null);
 
+        txtSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSenhaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtSenha);
+        txtSenha.setBounds(50, 130, 190, 22);
+
         user.setText("Usuário:");
         getContentPane().add(user);
-        user.setBounds(115, 60, 60, 16);
+        user.setBounds(50, 50, 80, 16);
 
         senha.setText("Senha:");
         getContentPane().add(senha);
-        senha.setBounds(115, 132, 60, 16);
+        senha.setBounds(50, 110, 60, 16);
         getContentPane().add(txtUser);
-        txtUser.setBounds(115, 88, 169, 22);
-        getContentPane().add(txtSenha);
-        txtSenha.setBounds(115, 160, 169, 22);
+        txtUser.setBounds(50, 70, 190, 22);
 
         entrarButton.setText("Entrar");
         getContentPane().add(entrarButton);
-        entrarButton.setBounds(212, 200, 72, 23);
+        entrarButton.setBounds(110, 180, 72, 23);
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\RENNAN\\OneDrive\\Documentos\\NetBeansProjects\\BiblioTecla\\PSC\\src\\main\\java\\Lib\\OIG (1).png")); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(-250, -300, 820, 600);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSenhaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -89,6 +106,7 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton entrarButton;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel senha;
     private javax.swing.JTextField txtSenha;
     private javax.swing.JTextField txtUser;

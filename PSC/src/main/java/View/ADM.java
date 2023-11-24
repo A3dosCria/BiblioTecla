@@ -4,6 +4,8 @@
  */
 package View;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author vitor
@@ -26,72 +28,98 @@ public class ADM extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
+        nameUser = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
+        txtNameUser = new javax.swing.JTextPane();
+        ageUser = new javax.swing.JLabel();
+        txtAgeUser = new javax.swing.JTextField();
+        userSex = new javax.swing.JLabel();
+        boxUserSex = new javax.swing.JComboBox<>();
+        genBookUm = new javax.swing.JLabel();
+        boxGenUm = new javax.swing.JComboBox<>();
+        genBookTwo = new javax.swing.JLabel();
+        boxGenTwo = new javax.swing.JComboBox<>();
+        buttonCadUsu = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel6 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jLabel7 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("CADASTRO DE USUÁRIOS");
-        setMinimumSize(new java.awt.Dimension(450, 500));
+        setTitle("Cadastro de Usuários");
+        setLocation(new java.awt.Point(465, 200));
+        setMinimumSize(new java.awt.Dimension(461, 400));
         setResizable(false);
         getContentPane().setLayout(null);
 
-        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("NOME");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(70, 70, 70, 30);
+        nameUser.setBackground(new java.awt.Color(0, 0, 0));
+        nameUser.setText("NOME DO USUÁRIO");
+        getContentPane().add(nameUser);
+        nameUser.setBounds(70, 50, 150, 30);
 
         jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
-        jScrollPane1.setViewportView(jTextPane1);
+        jScrollPane1.setViewportView(txtNameUser);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(70, 100, 330, 30);
+        jScrollPane1.setBounds(70, 80, 330, 30);
 
-        jLabel1.setText("IDADE");
+        ageUser.setText("IDADE");
+        getContentPane().add(ageUser);
+        ageUser.setBounds(70, 140, 60, 16);
+        getContentPane().add(txtAgeUser);
+        txtAgeUser.setBounds(70, 160, 60, 30);
+
+        userSex.setText("SEXO");
+        getContentPane().add(userSex);
+        userSex.setBounds(260, 140, 70, 16);
+
+        boxUserSex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Masculino", "Feminino", "Outro" }));
+        boxUserSex.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boxUserSexActionPerformed(evt);
+            }
+        });
+        getContentPane().add(boxUserSex);
+        boxUserSex.setBounds(260, 160, 120, 22);
+
+        genBookUm.setText("GÊNERO LIVRO 1");
+        getContentPane().add(genBookUm);
+        genBookUm.setBounds(70, 220, 130, 16);
+
+        boxGenUm.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Romance", "Ficção", "Técnico" }));
+        getContentPane().add(boxGenUm);
+        boxGenUm.setBounds(70, 240, 110, 22);
+
+        genBookTwo.setText("GÊNERO LIVRO 2");
+        getContentPane().add(genBookTwo);
+        genBookTwo.setBounds(260, 220, 130, 16);
+
+        boxGenTwo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Romance", "Ficção", "Técnico" }));
+        getContentPane().add(boxGenTwo);
+        boxGenTwo.setBounds(260, 240, 110, 22);
+
+        buttonCadUsu.setText("CADASTRAR USUÁRIO");
+        buttonCadUsu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCadUsuActionPerformed(evt);
+            }
+        });
+        getContentPane().add(buttonCadUsu);
+        buttonCadUsu.setBounds(140, 290, 170, 40);
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\RENNAN\\OneDrive\\Documentos\\NetBeansProjects\\BiblioTecla\\PSC\\src\\main\\java\\Lib\\OIG (1).png")); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(70, 150, 33, 16);
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(70, 170, 60, 30);
-
-        jLabel3.setText("SEXO");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(260, 150, 28, 16);
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Masculino", "Feminino", "Prefiro não informar" }));
-        getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(260, 170, 120, 30);
-
-        jLabel6.setText("GÊNERO LIVRO 1");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(70, 230, 110, 16);
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Romance", "Ficção", "Técnico" }));
-        getContentPane().add(jComboBox2);
-        jComboBox2.setBounds(70, 250, 100, 22);
-
-        jLabel7.setText("GÊNERO LIVRO 2");
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(70, 300, 100, 16);
-
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Romance", "Ficção", "Técnico" }));
-        getContentPane().add(jComboBox3);
-        jComboBox3.setBounds(70, 320, 110, 22);
-
-        jButton1.setText("CADASTRAR USUÁRIO");
-        getContentPane().add(jButton1);
-        jButton1.setBounds(160, 370, 170, 40);
+        jLabel1.setBounds(-90, -190, 660, 660);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void boxUserSexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxUserSexActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_boxUserSexActionPerformed
+
+    private void buttonCadUsuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCadUsuActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Usuário Cadastrado");
+    }//GEN-LAST:event_buttonCadUsuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -129,17 +157,18 @@ public class ADM extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JLabel ageUser;
+    private javax.swing.JComboBox<String> boxGenTwo;
+    private javax.swing.JComboBox<String> boxGenUm;
+    private javax.swing.JComboBox<String> boxUserSex;
+    private javax.swing.JButton buttonCadUsu;
+    private javax.swing.JLabel genBookTwo;
+    private javax.swing.JLabel genBookUm;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JLabel nameUser;
+    private javax.swing.JTextField txtAgeUser;
+    private javax.swing.JTextPane txtNameUser;
+    private javax.swing.JLabel userSex;
     // End of variables declaration//GEN-END:variables
 }

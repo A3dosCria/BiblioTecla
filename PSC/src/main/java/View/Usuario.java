@@ -4,6 +4,8 @@
  */
 package View;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author vitor
@@ -26,99 +28,104 @@ public class Usuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        titleBook = new javax.swing.JLabel();
+        txtTitleBook = new javax.swing.JTextField();
+        autorBook = new javax.swing.JLabel();
+        txtAutor = new javax.swing.JTextField();
+        titleCad = new javax.swing.JLabel();
+        genBook = new javax.swing.JLabel();
+        txtGenBook = new javax.swing.JTextField();
+        noteBook = new javax.swing.JLabel();
+        boxNoteBook = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        imgFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("CADASTROS DE LIVROS");
-        setMinimumSize(new java.awt.Dimension(539, 513));
+        setTitle("Cadastro de Livros");
+        setMinimumSize(new java.awt.Dimension(550, 550));
         setResizable(false);
         getContentPane().setLayout(null);
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("TÍTULO");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(100, 120, 38, 16);
+        titleBook.setText("TÍTULO");
+        getContentPane().add(titleBook);
+        titleBook.setBounds(100, 120, 80, 16);
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtTitleBook.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtTitleBookActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(100, 140, 330, 22);
+        getContentPane().add(txtTitleBook);
+        txtTitleBook.setBounds(100, 140, 330, 22);
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("AUTOR ");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(100, 190, 41, 16);
+        autorBook.setText("AUTOR ");
+        getContentPane().add(autorBook);
+        autorBook.setBounds(100, 190, 100, 16);
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        txtAutor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                txtAutorActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(100, 210, 330, 22);
+        getContentPane().add(txtAutor);
+        txtAutor.setBounds(100, 210, 330, 22);
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("CADASTROS DE LIVROS");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(160, 60, 202, 25);
+        titleCad.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        titleCad.setText("CADASTRO DE LIVROS");
+        getContentPane().add(titleCad);
+        titleCad.setBounds(160, 60, 202, 25);
 
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("GÊNERO");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(100, 270, 45, 16);
-        getContentPane().add(jTextField3);
-        jTextField3.setBounds(100, 290, 330, 22);
+        genBook.setText("GÊNERO");
+        getContentPane().add(genBook);
+        genBook.setBounds(100, 270, 110, 16);
+        getContentPane().add(txtGenBook);
+        txtGenBook.setBounds(100, 290, 330, 22);
 
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("NOTA DE 0 A 10");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(100, 340, 84, 16);
+        noteBook.setText("NOTA DE 0 A 10");
+        getContentPane().add(noteBook);
+        noteBook.setBounds(100, 340, 160, 16);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        boxNoteBook.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+        boxNoteBook.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                boxNoteBookActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(100, 360, 72, 22);
+        getContentPane().add(boxNoteBook);
+        boxNoteBook.setBounds(100, 360, 72, 22);
 
         jButton1.setText("CADASTRAR LIVRO");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1);
         jButton1.setBounds(180, 400, 169, 40);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Lib/OIG (1).png"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, -20, 560, 540);
+        imgFundo.setIcon(new javax.swing.ImageIcon("C:\\Users\\RENNAN\\OneDrive\\Documentos\\NetBeansProjects\\BiblioTecla\\PSC\\src\\main\\java\\Lib\\OIG (1).png")); // NOI18N
+        getContentPane().add(imgFundo);
+        imgFundo.setBounds(-90, -10, 660, 540);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtTitleBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTitleBookActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtTitleBookActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void txtAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAutorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_txtAutorActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void boxNoteBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boxNoteBookActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_boxNoteBookActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "O livro foi adicionado para sua lista!");
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,16 +163,16 @@ public class Usuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel autorBook;
+    private javax.swing.JComboBox<String> boxNoteBook;
+    private javax.swing.JLabel genBook;
+    private javax.swing.JLabel imgFundo;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JLabel noteBook;
+    private javax.swing.JLabel titleBook;
+    private javax.swing.JLabel titleCad;
+    private javax.swing.JTextField txtAutor;
+    private javax.swing.JTextField txtGenBook;
+    private javax.swing.JTextField txtTitleBook;
     // End of variables declaration//GEN-END:variables
 }

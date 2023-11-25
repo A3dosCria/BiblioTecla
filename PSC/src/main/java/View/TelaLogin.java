@@ -8,12 +8,12 @@ package View;
  *
  * @author RENNAN
  */
-public class Login extends javax.swing.JFrame {
+public class TelaLogin extends javax.swing.JFrame {
 
     /**
      * Creates new form Login
      */
-    public Login() {
+    public TelaLogin() {
         initComponents();
     }
 
@@ -31,7 +31,6 @@ public class Login extends javax.swing.JFrame {
         senha = new javax.swing.JLabel();
         txtUser = new javax.swing.JTextField();
         entrarButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela de Login");
@@ -63,11 +62,6 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(entrarButton);
         entrarButton.setBounds(110, 180, 72, 23);
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\RENNAN\\OneDrive\\Documentos\\NetBeansProjects\\BiblioTecla\\PSC\\src\\main\\java\\Lib\\OIG (1).png")); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(-250, -300, 820, 600);
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -92,21 +86,21 @@ public class Login extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
         
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new Login().setVisible(true);
+            new TelaLogin().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton entrarButton;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel senha;
     private javax.swing.JTextField txtSenha;
     private javax.swing.JTextField txtUser;

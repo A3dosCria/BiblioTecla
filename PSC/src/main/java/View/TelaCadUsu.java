@@ -4,18 +4,26 @@
  */
 package View;
 
+import Model.Usuario;
+import dao.UsuarioDAO;
 import javax.swing.JOptionPane;
+
+
+
 
 /**
  *
  * @author vitor
  */
-public class ADM extends javax.swing.JFrame {
-
+public class TelaCadUsu extends javax.swing.JFrame {
+    
+    Usuario usuario = new Usuario();
+    UsuarioDAO usuariodao = new UsuarioDAO();
+    
     /**
      * Creates new form ADM
      */
-    public ADM() {
+    public TelaCadUsu() {
         initComponents();
     }
 
@@ -40,7 +48,6 @@ public class ADM extends javax.swing.JFrame {
         genBookTwo = new javax.swing.JLabel();
         boxGenTwo = new javax.swing.JComboBox<>();
         buttonCadUsu = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Usuários");
@@ -104,11 +111,6 @@ public class ADM extends javax.swing.JFrame {
         getContentPane().add(buttonCadUsu);
         buttonCadUsu.setBounds(140, 290, 170, 40);
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\RENNAN\\OneDrive\\Documentos\\NetBeansProjects\\BiblioTecla\\PSC\\src\\main\\java\\Lib\\OIG (1).png")); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(-90, -190, 660, 660);
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -118,7 +120,10 @@ public class ADM extends javax.swing.JFrame {
 
     private void buttonCadUsuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCadUsuActionPerformed
         // TODO add your handling code here:
+        usuario.setNome(txtNameUser.getText());
         JOptionPane.showMessageDialog(null, "Usuário Cadastrado");
+        JOptionPane.showMessageDialog(null, usuario.getNome());
+
     }//GEN-LAST:event_buttonCadUsuActionPerformed
 
     /**
@@ -138,20 +143,23 @@ public class ADM extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ADM.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadUsu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ADM.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadUsu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ADM.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadUsu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ADM.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadUsu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ADM().setVisible(true);
+                new TelaCadUsu().setVisible(true);
             }
         });
     }
@@ -164,7 +172,6 @@ public class ADM extends javax.swing.JFrame {
     private javax.swing.JButton buttonCadUsu;
     private javax.swing.JLabel genBookTwo;
     private javax.swing.JLabel genBookUm;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel nameUser;
     private javax.swing.JTextField txtAgeUser;

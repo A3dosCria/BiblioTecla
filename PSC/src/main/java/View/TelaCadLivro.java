@@ -10,12 +10,12 @@ import javax.swing.JOptionPane;
  *
  * @author vitor
  */
-public class Usuario extends javax.swing.JFrame {
+public class TelaCadLivro extends javax.swing.JFrame {
 
     /**
      * Creates new form Usuario
      */
-    public Usuario() {
+    public TelaCadLivro() {
         initComponents();
     }
 
@@ -28,6 +28,7 @@ public class Usuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        imgFundo = new javax.swing.JLabel();
         titleBook = new javax.swing.JLabel();
         txtTitleBook = new javax.swing.JTextField();
         autorBook = new javax.swing.JLabel();
@@ -38,7 +39,6 @@ public class Usuario extends javax.swing.JFrame {
         noteBook = new javax.swing.JLabel();
         boxNoteBook = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
-        imgFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Livros");
@@ -103,10 +103,6 @@ public class Usuario extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(180, 400, 169, 40);
 
-        imgFundo.setIcon(new javax.swing.ImageIcon("C:\\Users\\RENNAN\\OneDrive\\Documentos\\NetBeansProjects\\BiblioTecla\\PSC\\src\\main\\java\\Lib\\OIG (1).png")); // NOI18N
-        getContentPane().add(imgFundo);
-        imgFundo.setBounds(-90, -10, 660, 540);
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -144,20 +140,23 @@ public class Usuario extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Usuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadLivro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Usuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadLivro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Usuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadLivro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Usuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadLivro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Usuario().setVisible(true);
+                new TelaCadLivro().setVisible(true);
             }
         });
     }

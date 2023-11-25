@@ -30,7 +30,6 @@ public class ListaLivros extends javax.swing.JFrame {
         bookList = new javax.swing.JList<>();
         addBookButton = new javax.swing.JButton();
         labelList = new javax.swing.JLabel();
-        imgFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("BiblioTecla");
@@ -60,11 +59,6 @@ public class ListaLivros extends javax.swing.JFrame {
         labelList.setName(""); // NOI18N
         getContentPane().add(labelList);
         labelList.setBounds(50, 96, 170, 20);
-
-        imgFundo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        imgFundo.setIcon(new javax.swing.ImageIcon("C:\\Users\\RENNAN\\OneDrive\\Documentos\\NetBeansProjects\\BiblioTecla\\PSC\\src\\main\\java\\Lib\\OIG (1).png")); // NOI18N
-        getContentPane().add(imgFundo);
-        imgFundo.setBounds(-140, -350, 830, 750);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -111,7 +105,6 @@ public class ListaLivros extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBookButton;
     private javax.swing.JList<String> bookList;
-    private javax.swing.JLabel imgFundo;
     private javax.swing.JLabel labelList;
     private javax.swing.JScrollPane scrollList;
     // End of variables declaration//GEN-END:variables

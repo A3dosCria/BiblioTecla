@@ -4,9 +4,9 @@
  */
 package View;
 
-import dao.UsuarioDAO;
-import static dao.UsuarioDAO.Autenticate;
-import static dao.UsuarioDAO.tipoUsu;
+import dao.DAO;
+import static dao.DAO.Autenticate;
+import static dao.DAO.tipoUsu;
 import javax.swing.JOptionPane;
 
 /**

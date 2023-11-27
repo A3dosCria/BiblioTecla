@@ -2,8 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package View;
+package View.CadastroAlt;
 
+import Model.Livro;
+import static View.CadastroAlt.TelaAltLivro.id;
+import View.ListaLivros;
+import dao.DAO;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,10 +19,15 @@ import javax.swing.JOptionPane;
  */
 public class TelaCadLivro extends javax.swing.JFrame {
 
+    Livro livro = new Livro();
     /**
      * Creates new form Usuario
      */
+    
+    
     public TelaCadLivro() {
+        
+        
         initComponents();
     }
 
@@ -29,7 +41,6 @@ public class TelaCadLivro extends javax.swing.JFrame {
     private void initComponents() {
 
         imgFundo = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
         titleBook = new javax.swing.JLabel();
         txtTitleBook = new javax.swing.JTextField();
         autorBook = new javax.swing.JLabel();
@@ -44,18 +55,9 @@ public class TelaCadLivro extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Livros");
-        setMinimumSize(new java.awt.Dimension(1035, 635));
+        setMinimumSize(new java.awt.Dimension(1035, 600));
         setResizable(false);
         getContentPane().setLayout(null);
-
-        jButton2.setText("jButton2");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(930, 530, 75, 23);
 
         titleBook.setForeground(new java.awt.Color(0, 0, 0));
         titleBook.setText("TÍTULO");
@@ -87,7 +89,7 @@ public class TelaCadLivro extends javax.swing.JFrame {
         titleCad.setForeground(new java.awt.Color(0, 0, 0));
         titleCad.setText("CADASTRO DE LIVROS");
         getContentPane().add(titleCad);
-        titleCad.setBounds(400, 80, 202, 25);
+        titleCad.setBounds(410, 80, 202, 25);
 
         genBook.setForeground(new java.awt.Color(0, 0, 0));
         genBook.setText("GÊNERO");
@@ -140,15 +142,24 @@ public class TelaCadLivro extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+            
+            livro.setTitulo(txtTitleBook.getText());
+            livro.setAutor(txtAutor.getText());
+            livro.setTipo(txtGenBook.getText());
+            livro.setNota(Integer.parseInt(boxNoteBook.getSelectedItem().toString()));
+            DAO.saveLivro(livro);
+            JOptionPane.showMessageDialog(null, "O livro foi Alterado!");
+            ListaLivros listaLivros = new ListaLivros();
+            this.dispose();
+            listaLivros.setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaAltLivro.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
         JOptionPane.showMessageDialog(null, "O livro foi adicionado para sua lista!");
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        ListaLivros listaLivro = new ListaLivros();
-        this.dispose();
-        listaLivro.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,7 +205,6 @@ public class TelaCadLivro extends javax.swing.JFrame {
     private javax.swing.JLabel genBook;
     private javax.swing.JLabel imgFundo;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel noteBook;
     private javax.swing.JLabel titleBook;

@@ -4,6 +4,10 @@
  */
 package View;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Rayni
@@ -90,10 +94,14 @@ public class TelaDeUsuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-        ListaLivros listaLivro = new ListaLivros();
-        this.dispose();
-        listaLivro.setVisible(true);
+        try {
+            // TODO add your handling code here:
+            ListaLivros listaLivro = new ListaLivros();
+            this.dispose();
+            listaLivro.setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaDeUsuarios.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton6ActionPerformed
 
     /**

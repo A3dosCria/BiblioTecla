@@ -4,7 +4,10 @@
  */
 package View;
 
-import View.CadUsu.TelaCadUsu;
+import View.CadastroAlt.TelaCadUsu;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -121,10 +124,14 @@ public class TelaDeAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_AddUsuActionPerformed
 
     private void ListLivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListLivroActionPerformed
-        // TODO add your handling code here:
-        ListaLivros listaLivro = new ListaLivros();
-        this.dispose();
-        listaLivro.setVisible(true);
+        try {
+            // TODO add your handling code here:
+            ListaLivros listaLivro = new ListaLivros();
+            this.dispose();
+            listaLivro.setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaDeAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_ListLivroActionPerformed
 
     /**

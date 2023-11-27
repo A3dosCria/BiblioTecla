@@ -4,6 +4,17 @@
  */
 package View;
 
+import View.CadastroAlt.TelaCadLivro;
+import Model.Livro;
+import View.CadastroAlt.TelaAltLivro;
+import dao.DAO;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
+import static dao.DAO.lerLivroTable;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author vitor
@@ -13,8 +24,25 @@ public class ListaLivros extends javax.swing.JFrame {
     /**
      * Creates new form ListaLivros
      */
-    public ListaLivros() {
+    public ListaLivros() throws SQLException {
         initComponents();
+        readTable();
+        
+    }
+    
+    public void readTable() throws SQLException{
+        DefaultTableModel modelo = (DefaultTableModel) tabelaLivros.getModel();
+        
+        for(Livro l: lerLivroTable()){
+            modelo.addRow(new Object[]{
+                l.getId(),
+                l.getTitulo(),
+                l.getAutor(),                
+                l.getNota(),
+                l.getGenero(),
+        });
+        }
+        
     }
 
     /**
@@ -26,66 +54,65 @@ public class ListaLivros extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        addBookButton = new javax.swing.JButton();
+        altLivroButton = new javax.swing.JButton();
         labelList = new javax.swing.JLabel();
-        addBookButton1 = new javax.swing.JButton();
-        addBookButton3 = new javax.swing.JButton();
+        remLivroButton = new javax.swing.JButton();
+        addLivroButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabelaLivros = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("BiblioTecla");
-        setMinimumSize(new java.awt.Dimension(1035, 635));
+        setMinimumSize(new java.awt.Dimension(1035, 600));
         getContentPane().setLayout(null);
 
-        addBookButton.setText("Alterar Livro");
-        addBookButton.addActionListener(new java.awt.event.ActionListener() {
+        altLivroButton.setText("Alterar Livro");
+        altLivroButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addBookButtonActionPerformed(evt);
+                altLivroButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(addBookButton);
-        addBookButton.setBounds(550, 170, 430, 23);
+        getContentPane().add(altLivroButton);
+        altLivroButton.setBounds(550, 170, 430, 23);
 
+        labelList.setForeground(new java.awt.Color(0, 0, 0));
         labelList.setText("Gerencie Seus Livros:");
         labelList.setName(""); // NOI18N
         getContentPane().add(labelList);
         labelList.setBounds(50, 96, 170, 20);
 
-        addBookButton1.setText("Excluir Livro");
-        addBookButton1.addActionListener(new java.awt.event.ActionListener() {
+        remLivroButton.setText("Excluir Livro");
+        remLivroButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addBookButton1ActionPerformed(evt);
+                remLivroButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(addBookButton1);
-        addBookButton1.setBounds(550, 210, 430, 23);
+        getContentPane().add(remLivroButton);
+        remLivroButton.setBounds(550, 210, 430, 23);
 
-        addBookButton3.setText("Adicionar Livro");
-        addBookButton3.addActionListener(new java.awt.event.ActionListener() {
+        addLivroButton.setText("Adicionar Livro");
+        addLivroButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addBookButton3ActionPerformed(evt);
+                addLivroButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(addBookButton3);
-        addBookButton3.setBounds(550, 130, 430, 23);
+        getContentPane().add(addLivroButton);
+        addLivroButton.setBounds(550, 130, 430, 23);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaLivros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Titulo", "Autor", "Nota", "Genero"
+                "ID", "Titulo", "Autor", "Nota", "Genero"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                true, false, false, true
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -96,34 +123,54 @@ public class ListaLivros extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
-            jTable1.getColumnModel().getColumn(3).setResizable(false);
-        }
+        tabelaLivros.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tabelaLivros);
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(50, 130, 452, 330);
 
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rayni\\Documents\\NetBeansProjects\\Projeto A3\\BiblioTecla\\PSC\\src\\main\\java\\Lib\\OIG.png")); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 1030, 580);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void addBookButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBookButtonActionPerformed
+    private void altLivroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_altLivroButtonActionPerformed
+        try {
+            // TODO add your handling code here:
+            if(tabelaLivros.getSelectedRow() == -1){
+                JOptionPane.showMessageDialog(null, "Escolha um livro na tabela");
+            }
+            else{
+                String id = tabelaLivros.getValueAt(tabelaLivros.getSelectedRow(), 0).toString();
+                TelaAltLivro telacad = new TelaAltLivro(id);
+                this.dispose();
+                telacad.setVisible(true);
+            }
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ListaLivros.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_altLivroButtonActionPerformed
+
+    private void addLivroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addLivroButtonActionPerformed
         // TODO add your handling code here:
         TelaCadLivro telacad = new TelaCadLivro();
         this.dispose();
         telacad.setVisible(true);
-    }//GEN-LAST:event_addBookButtonActionPerformed
+        
+    }//GEN-LAST:event_addLivroButtonActionPerformed
 
-    private void addBookButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBookButton3ActionPerformed
+    private void remLivroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remLivroButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_addBookButton3ActionPerformed
+        DefaultTableModel modelo = (DefaultTableModel) tabelaLivros.getModel();
+        DAO.removeLivro(tabelaLivros.getValueAt(tabelaLivros.getSelectedRow(), 0).toString());
+        modelo.removeRow(tabelaLivros.getSelectedRow());
+        
 
-    private void addBookButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBookButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addBookButton1ActionPerformed
+    }//GEN-LAST:event_remLivroButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,17 +202,22 @@ public class ListaLivros extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ListaLivros().setVisible(true);
+                try {
+                    new ListaLivros().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(ListaLivros.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addBookButton;
-    private javax.swing.JButton addBookButton1;
-    private javax.swing.JButton addBookButton3;
+    private javax.swing.JButton addLivroButton;
+    private javax.swing.JButton altLivroButton;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel labelList;
+    private javax.swing.JButton remLivroButton;
+    private javax.swing.JTable tabelaLivros;
     // End of variables declaration//GEN-END:variables
 }

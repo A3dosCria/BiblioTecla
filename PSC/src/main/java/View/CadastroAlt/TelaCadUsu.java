@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package View.CadUsu;
+package View.CadastroAlt;
 
 import Model.Usuario;
-import dao.UsuarioDAO;
+import dao.DAO;
 import javax.swing.JOptionPane;
 
 
@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
 public class TelaCadUsu extends javax.swing.JFrame {
     
     Usuario usuario = new Usuario();
-    UsuarioDAO usuariodao = new UsuarioDAO();
+    DAO usuariodao = new DAO();
     
     /**
      * Creates new form ADM

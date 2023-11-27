@@ -136,7 +136,7 @@ public class TelaAltLivro extends javax.swing.JFrame {
         getContentPane().add(CadLivro);
         CadLivro.setBounds(420, 420, 169, 40);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rayni\\Documents\\NetBeansProjects\\Projeto A3\\BiblioTecla\\PSC\\src\\main\\java\\Lib\\OIG.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/OIG.png"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 1030, 580);
 

@@ -29,6 +29,7 @@ public class TelaCadLivro extends javax.swing.JFrame {
     private void initComponents() {
 
         imgFundo = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         titleBook = new javax.swing.JLabel();
         txtTitleBook = new javax.swing.JTextField();
         autorBook = new javax.swing.JLabel();
@@ -39,16 +40,27 @@ public class TelaCadLivro extends javax.swing.JFrame {
         noteBook = new javax.swing.JLabel();
         boxNoteBook = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Livros");
-        setMinimumSize(new java.awt.Dimension(1030, 600));
+        setMinimumSize(new java.awt.Dimension(1035, 635));
         setResizable(false);
         getContentPane().setLayout(null);
 
+        jButton2.setText("jButton2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(930, 530, 75, 23);
+
+        titleBook.setForeground(new java.awt.Color(0, 0, 0));
         titleBook.setText("TÍTULO");
         getContentPane().add(titleBook);
-        titleBook.setBounds(100, 120, 80, 16);
+        titleBook.setBounds(480, 140, 80, 16);
 
         txtTitleBook.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,11 +68,12 @@ public class TelaCadLivro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtTitleBook);
-        txtTitleBook.setBounds(100, 140, 330, 22);
+        txtTitleBook.setBounds(340, 160, 330, 22);
 
+        autorBook.setForeground(new java.awt.Color(0, 0, 0));
         autorBook.setText("AUTOR ");
         getContentPane().add(autorBook);
-        autorBook.setBounds(100, 190, 100, 16);
+        autorBook.setBounds(480, 210, 100, 16);
 
         txtAutor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,22 +81,25 @@ public class TelaCadLivro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtAutor);
-        txtAutor.setBounds(100, 210, 330, 22);
+        txtAutor.setBounds(340, 230, 330, 22);
 
         titleCad.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        titleCad.setForeground(new java.awt.Color(0, 0, 0));
         titleCad.setText("CADASTRO DE LIVROS");
         getContentPane().add(titleCad);
-        titleCad.setBounds(160, 60, 202, 25);
+        titleCad.setBounds(400, 80, 202, 25);
 
+        genBook.setForeground(new java.awt.Color(0, 0, 0));
         genBook.setText("GÊNERO");
         getContentPane().add(genBook);
-        genBook.setBounds(100, 270, 110, 16);
+        genBook.setBounds(480, 290, 110, 16);
         getContentPane().add(txtGenBook);
-        txtGenBook.setBounds(100, 290, 330, 22);
+        txtGenBook.setBounds(340, 310, 330, 22);
 
+        noteBook.setForeground(new java.awt.Color(0, 0, 0));
         noteBook.setText("NOTA DE 0 A 10");
         getContentPane().add(noteBook);
-        noteBook.setBounds(100, 340, 160, 16);
+        noteBook.setBounds(460, 360, 110, 16);
 
         boxNoteBook.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
         boxNoteBook.addActionListener(new java.awt.event.ActionListener() {
@@ -92,7 +108,7 @@ public class TelaCadLivro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(boxNoteBook);
-        boxNoteBook.setBounds(100, 360, 72, 22);
+        boxNoteBook.setBounds(470, 380, 80, 22);
 
         jButton1.setText("CADASTRAR LIVRO");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -101,7 +117,11 @@ public class TelaCadLivro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(180, 400, 169, 40);
+        jButton1.setBounds(420, 420, 169, 40);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rayni\\Documents\\NetBeansProjects\\Projeto A3\\BiblioTecla\\PSC\\src\\main\\java\\Lib\\OIG.png")); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 1030, 580);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -122,6 +142,13 @@ public class TelaCadLivro extends javax.swing.JFrame {
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(null, "O livro foi adicionado para sua lista!");
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        ListaLivros listaLivro = new ListaLivros();
+        this.dispose();
+        listaLivro.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,6 +194,8 @@ public class TelaCadLivro extends javax.swing.JFrame {
     private javax.swing.JLabel genBook;
     private javax.swing.JLabel imgFundo;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel noteBook;
     private javax.swing.JLabel titleBook;
     private javax.swing.JLabel titleCad;

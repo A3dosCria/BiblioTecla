@@ -26,46 +26,104 @@ public class ListaLivros extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        scrollList = new javax.swing.JScrollPane();
-        bookList = new javax.swing.JList<>();
         addBookButton = new javax.swing.JButton();
         labelList = new javax.swing.JLabel();
+        addBookButton1 = new javax.swing.JButton();
+        addBookButton3 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("BiblioTecla");
-        setMinimumSize(new java.awt.Dimension(1030, 600));
+        setMinimumSize(new java.awt.Dimension(1035, 635));
         getContentPane().setLayout(null);
 
-        bookList.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        scrollList.setViewportView(bookList);
-
-        getContentPane().add(scrollList);
-        scrollList.setBounds(44, 120, 437, 192);
-
-        addBookButton.setText("Adicionar Livro");
+        addBookButton.setText("Alterar Livro");
         addBookButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addBookButtonActionPerformed(evt);
             }
         });
         getContentPane().add(addBookButton);
-        addBookButton.setBounds(350, 330, 130, 23);
+        addBookButton.setBounds(550, 170, 430, 23);
 
         labelList.setText("Gerencie Seus Livros:");
         labelList.setName(""); // NOI18N
         getContentPane().add(labelList);
         labelList.setBounds(50, 96, 170, 20);
 
+        addBookButton1.setText("Excluir Livro");
+        addBookButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBookButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(addBookButton1);
+        addBookButton1.setBounds(550, 210, 430, 23);
+
+        addBookButton3.setText("Adicionar Livro");
+        addBookButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBookButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(addBookButton3);
+        addBookButton3.setBounds(550, 130, 430, 23);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Titulo", "Autor", "Nota", "Genero"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                true, false, false, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setResizable(false);
+            jTable1.getColumnModel().getColumn(1).setResizable(false);
+            jTable1.getColumnModel().getColumn(2).setResizable(false);
+            jTable1.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(50, 130, 452, 330);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void addBookButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBookButtonActionPerformed
         // TODO add your handling code here:
+        TelaCadLivro telacad = new TelaCadLivro();
+        this.dispose();
+        telacad.setVisible(true);
     }//GEN-LAST:event_addBookButtonActionPerformed
+
+    private void addBookButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBookButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addBookButton3ActionPerformed
+
+    private void addBookButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBookButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addBookButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -104,8 +162,10 @@ public class ListaLivros extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBookButton;
-    private javax.swing.JList<String> bookList;
+    private javax.swing.JButton addBookButton1;
+    private javax.swing.JButton addBookButton3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel labelList;
-    private javax.swing.JScrollPane scrollList;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,6 +4,8 @@
  */
 package View;
 
+import View.CadUsu.TelaCadUsu;
+
 /**
  *
  * @author Rayni
@@ -29,11 +31,8 @@ public class TelaDeAdmin extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        AddUsu = new javax.swing.JButton();
+        ListLivro = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -63,35 +62,23 @@ public class TelaDeAdmin extends javax.swing.JFrame {
         getContentPane().add(jLabel4);
         jLabel4.setBounds(90, 120, 140, 30);
 
-        jButton2.setText("Adicionar usuario");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        AddUsu.setText("Adicionar usuario");
+        AddUsu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                AddUsuActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(90, 150, 370, 60);
+        getContentPane().add(AddUsu);
+        AddUsu.setBounds(90, 150, 370, 60);
 
-        jButton3.setText("Consultar usuario");
-        getContentPane().add(jButton3);
-        jButton3.setBounds(90, 310, 370, 60);
-
-        jButton4.setText("Excluir usuario");
-        getContentPane().add(jButton4);
-        jButton4.setBounds(90, 390, 370, 60);
-
-        jButton5.setText("Alterar usuario");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        ListLivro.setText("Acessar lista de livros");
+        ListLivro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                ListLivroActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5);
-        jButton5.setBounds(90, 230, 370, 60);
-
-        jButton6.setText("Acessar lista de livros");
-        getContentPane().add(jButton6);
-        jButton6.setBounds(570, 150, 370, 60);
+        getContentPane().add(ListLivro);
+        ListLivro.setBounds(570, 150, 370, 60);
 
         jLabel2.setFont(new java.awt.Font("Segoe Script", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
@@ -126,13 +113,19 @@ public class TelaDeAdmin extends javax.swing.JFrame {
         login.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void AddUsuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddUsuActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        TelaCadUsu telacad = new TelaCadUsu();
+        this.dispose();
+        telacad.setVisible(true);
+    }//GEN-LAST:event_AddUsuActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void ListLivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListLivroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+        ListaLivros listaLivro = new ListaLivros();
+        this.dispose();
+        listaLivro.setVisible(true);
+    }//GEN-LAST:event_ListLivroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,12 +163,9 @@ public class TelaDeAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AddUsu;
+    private javax.swing.JButton ListLivro;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

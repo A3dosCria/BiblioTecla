@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package View;
+package View.CadUsu;
 
 import Model.Usuario;
 import dao.UsuarioDAO;
@@ -26,6 +26,7 @@ public class TelaCadUsu extends javax.swing.JFrame {
     public TelaCadUsu() {
         initComponents();
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -48,34 +49,38 @@ public class TelaCadUsu extends javax.swing.JFrame {
         genBookTwo = new javax.swing.JLabel();
         boxGenTwo = new javax.swing.JComboBox<>();
         buttonCadUsu = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Usuários");
         setLocation(new java.awt.Point(465, 200));
-        setMinimumSize(new java.awt.Dimension(461, 400));
+        setMinimumSize(new java.awt.Dimension(1035, 635));
         setResizable(false);
         getContentPane().setLayout(null);
 
         nameUser.setBackground(new java.awt.Color(0, 0, 0));
+        nameUser.setForeground(new java.awt.Color(0, 0, 0));
         nameUser.setText("NOME DO USUÁRIO");
         getContentPane().add(nameUser);
-        nameUser.setBounds(70, 50, 150, 30);
+        nameUser.setBounds(460, 70, 150, 30);
 
         jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(txtNameUser);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(70, 80, 330, 30);
+        jScrollPane1.setBounds(350, 100, 330, 30);
 
+        ageUser.setForeground(new java.awt.Color(0, 0, 0));
         ageUser.setText("IDADE");
         getContentPane().add(ageUser);
-        ageUser.setBounds(70, 140, 60, 16);
+        ageUser.setBounds(490, 250, 60, 16);
         getContentPane().add(txtAgeUser);
-        txtAgeUser.setBounds(70, 160, 60, 30);
+        txtAgeUser.setBounds(430, 270, 170, 30);
 
+        userSex.setForeground(new java.awt.Color(0, 0, 0));
         userSex.setText("SEXO");
         getContentPane().add(userSex);
-        userSex.setBounds(260, 140, 70, 16);
+        userSex.setBounds(490, 170, 70, 16);
 
         boxUserSex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Masculino", "Feminino", "Outro" }));
         boxUserSex.addActionListener(new java.awt.event.ActionListener() {
@@ -84,23 +89,25 @@ public class TelaCadUsu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(boxUserSex);
-        boxUserSex.setBounds(260, 160, 120, 22);
+        boxUserSex.setBounds(430, 192, 170, 40);
 
+        genBookUm.setForeground(new java.awt.Color(0, 0, 0));
         genBookUm.setText("GÊNERO LIVRO 1");
         getContentPane().add(genBookUm);
-        genBookUm.setBounds(70, 220, 130, 16);
+        genBookUm.setBounds(470, 320, 130, 16);
 
         boxGenUm.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Romance", "Ficção", "Técnico" }));
         getContentPane().add(boxGenUm);
-        boxGenUm.setBounds(70, 240, 110, 22);
+        boxGenUm.setBounds(460, 340, 110, 22);
 
+        genBookTwo.setForeground(new java.awt.Color(0, 0, 0));
         genBookTwo.setText("GÊNERO LIVRO 2");
         getContentPane().add(genBookTwo);
-        genBookTwo.setBounds(260, 220, 130, 16);
+        genBookTwo.setBounds(470, 380, 130, 16);
 
         boxGenTwo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Romance", "Ficção", "Técnico" }));
         getContentPane().add(boxGenTwo);
-        boxGenTwo.setBounds(260, 240, 110, 22);
+        boxGenTwo.setBounds(460, 400, 110, 22);
 
         buttonCadUsu.setText("CADASTRAR USUÁRIO");
         buttonCadUsu.addActionListener(new java.awt.event.ActionListener() {
@@ -109,7 +116,11 @@ public class TelaCadUsu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(buttonCadUsu);
-        buttonCadUsu.setBounds(140, 290, 170, 40);
+        buttonCadUsu.setBounds(430, 470, 170, 40);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rayni\\Documents\\NetBeansProjects\\Projeto A3\\BiblioTecla\\PSC\\src\\main\\java\\Lib\\OIG.png")); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 1030, 600);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -172,6 +183,7 @@ public class TelaCadUsu extends javax.swing.JFrame {
     private javax.swing.JButton buttonCadUsu;
     private javax.swing.JLabel genBookTwo;
     private javax.swing.JLabel genBookUm;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel nameUser;
     private javax.swing.JTextField txtAgeUser;

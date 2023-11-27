@@ -42,7 +42,7 @@ public class TelaCadLivro extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Livros");
-        setMinimumSize(new java.awt.Dimension(550, 550));
+        setMinimumSize(new java.awt.Dimension(1030, 600));
         setResizable(false);
         getContentPane().setLayout(null);
 

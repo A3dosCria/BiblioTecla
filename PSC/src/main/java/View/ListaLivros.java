@@ -33,7 +33,7 @@ public class ListaLivros extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("BiblioTecla");
-        setMinimumSize(new java.awt.Dimension(540, 420));
+        setMinimumSize(new java.awt.Dimension(1030, 600));
         getContentPane().setLayout(null);
 
         bookList.setModel(new javax.swing.AbstractListModel<String>() {

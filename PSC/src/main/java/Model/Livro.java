@@ -14,7 +14,6 @@ public class Livro {
     private String titulo;
     private String autor;
     private String tipo;
-    private String genero;
     private int nota;
 
     public Livro(int id, String titulo, String autor, String tipo, String genero, int nota) {
@@ -22,7 +21,6 @@ public class Livro {
         this.titulo = titulo;
         this.autor = autor;
         this.tipo = tipo;
-        this.genero = genero;
         this.nota = nota;
     }
 
@@ -71,13 +69,7 @@ public class Livro {
         this.tipo = tipo;
     }
 
-    public String getGenero() {
-        return genero;
-    }
-
-    public void setGenero(String genero) {
-        this.genero = genero;
-    }
+    
 
     
     

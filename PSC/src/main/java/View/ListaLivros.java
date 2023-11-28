@@ -39,7 +39,7 @@ public class ListaLivros extends javax.swing.JFrame {
                 l.getTitulo(),
                 l.getAutor(),                
                 l.getNota(),
-                l.getGenero(),
+                l.getTipo(),
         });
         }
         

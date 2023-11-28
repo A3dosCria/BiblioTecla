@@ -1,3 +1,4 @@
+View\CadastroAlt\TelaCadUsu$5.class
 View\TelaDeAdmin$2.class
 View\CadastroAlt\TelaCadLivro$4.class
 View\CadastroAlt\TelaAltLivro$1.class
@@ -7,7 +8,6 @@ View\TelaLogin.class
 View\ListaLivros$5.class
 Model\Livro.class
 View\CadastroAlt\TelaAltLivro$3.class
-View\CadastroAlt\TelaAltLivro$6.class
 View\CadastroAlt\TelaCadLivro$2.class
 View\CadastroAlt\TelaCadUsu$3.class
 View\TelaLogin$1.class
@@ -24,6 +24,7 @@ View\TelaDeUsuarios$3.class
 View\CadastroAlt\TelaCadLivro$5.class
 View\CadastroAlt\TelaCadUsu$1.class
 View\TelaDeAdmin$1.class
+View\CadastroAlt\TelaCadUsu$6.class
 View\CadastroAlt\TelaAltLivro$4.class
 View\CadastroAlt\TelaCadUsu.class
 View\ListaLivros$4.class
@@ -34,6 +35,7 @@ View\CadastroAlt\TelaAltLivro.class
 View\CadastroAlt\TelaCadLivro$1.class
 View\CadastroAlt\TelaCadLivro.class
 View\TelaDeAdmin$5.class
+View\CadastroAlt\TelaCadUsu$4.class
 View\TelaDeUsuarios$4.class
 com\usjt\a32023\A32023.class
 View\ListaLivros$1.class

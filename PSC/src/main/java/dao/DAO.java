@@ -72,7 +72,7 @@ public class DAO {
                 livro.setId(rs.getInt("ID"));
                 livro.setTitulo(rs.getString("TITULO"));
                 livro.setAutor(rs.getString("AUTOR"));
-                livro.setGenero(rs.getString("TIPO"));
+                livro.setTipo(rs.getString("TIPO"));
                 livro.setNota(rs.getInt("NOTA"));
                 livros.add(livro);
             }
@@ -141,9 +141,9 @@ public class DAO {
         pstm.setString(2, usuario.getLogin());
         pstm.setString(3, usuario.getSenha());
         pstm.setString(4, usuario.getNome());
-        pstm.setInt(4, usuario.getIdade());
+        pstm.setInt(5, usuario.getIdade());
         pstm.setString(6, usuario.getSexo());
-        pstm.setString(7, usuario.getLivroPref2());
+        pstm.setString(7, usuario.getLivroPref1());
         pstm.setString(8, usuario.getLivroPref2());
         
         pstm.execute();
@@ -177,7 +177,7 @@ public class DAO {
         pstm = conn.prepareCall(sql);
         pstm.setString(1, livro.getTitulo());
         pstm.setString(2, livro.getAutor());
-        pstm.setString(3, livro.getGenero());
+        pstm.setString(3, livro.getTipo());
         pstm.setInt(4, livro.getNota());
         
         pstm.execute();
@@ -210,7 +210,7 @@ public class DAO {
         pstm = conn.prepareCall(sql);
         pstm.setString(1, livro.getTitulo());
         pstm.setString(2, livro.getAutor());
-        pstm.setString(3, livro.getGenero());
+        pstm.setString(3, livro.getTipo());
         pstm.setInt(4, livro.getNota());
         pstm.setString(5, id);
 
@@ -280,7 +280,6 @@ public class DAO {
                 livro.setId(rs.getInt("ID"));
                 livro.setTitulo(rs.getString("TITULO"));
                 livro.setAutor(rs.getString("AUTOR"));
-                livro.setGenero(rs.getString("TIPO"));
                 livro.setTipo(rs.getString("TIPO"));
                 livro.setNota(rs.getInt("NOTA"));
             }      

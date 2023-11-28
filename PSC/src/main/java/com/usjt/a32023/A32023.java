@@ -23,5 +23,6 @@ public class A32023 {
         }
         
         TelaLogin login = new TelaLogin();
+        login.setVisible(true);
     }
 }

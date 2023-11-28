@@ -4,12 +4,18 @@
  */
 package View;
 
+import dao.DAO;
+import static dao.DAO.Autenticate;
+import static dao.DAO.tipoUsu;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author RENNAN
  */
 public class TelaLogin extends javax.swing.JFrame {
-
+    
+    String login;
     /**
      * Creates new form Login
      */
@@ -26,48 +32,110 @@ public class TelaLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtSenha = new javax.swing.JTextField();
         user = new javax.swing.JLabel();
         senha = new javax.swing.JLabel();
-        txtUser = new javax.swing.JTextField();
+        LoginPasswordField = new javax.swing.JPasswordField();
+        loginFormField = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         entrarButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela de Login");
         setBackground(new java.awt.Color(255, 255, 255));
         setLocation(new java.awt.Point(550, 250));
-        setMinimumSize(new java.awt.Dimension(310, 250));
+        setMinimumSize(new java.awt.Dimension(1035, 600));
         setResizable(false);
         getContentPane().setLayout(null);
 
-        txtSenha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSenhaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txtSenha);
-        txtSenha.setBounds(50, 130, 190, 22);
-
+        user.setFont(new java.awt.Font("Serif", 2, 36)); // NOI18N
+        user.setForeground(new java.awt.Color(0, 0, 0));
         user.setText("Usuário:");
         getContentPane().add(user);
-        user.setBounds(50, 50, 80, 16);
+        user.setBounds(260, 180, 150, 30);
 
+        senha.setFont(new java.awt.Font("Serif", 2, 36)); // NOI18N
+        senha.setForeground(new java.awt.Color(0, 0, 0));
         senha.setText("Senha:");
         getContentPane().add(senha);
-        senha.setBounds(50, 110, 60, 16);
-        getContentPane().add(txtUser);
-        txtUser.setBounds(50, 70, 190, 22);
+        senha.setBounds(260, 290, 130, 30);
+
+        LoginPasswordField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        getContentPane().add(LoginPasswordField);
+        LoginPasswordField.setBounds(260, 320, 490, 40);
+
+        loginFormField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        loginFormField.setToolTipText("");
+        getContentPane().add(loginFormField);
+        loginFormField.setBounds(260, 210, 490, 40);
+
+        jLabel2.setFont(new java.awt.Font("Segoe Script", 1, 48)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("BiblioTecla");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(320, 60, 360, 60);
+
+        jLabel3.setFont(new java.awt.Font("Segoe Script", 2, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Seu sistema de gerenciamento de livros");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(400, 100, 300, 30);
 
         entrarButton.setText("Entrar");
+        entrarButton.setBorder(null);
+        entrarButton.setBorderPainted(false);
+        entrarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entrarButtonActionPerformed(evt);
+            }
+        });
         getContentPane().add(entrarButton);
-        entrarButton.setBounds(110, 180, 72, 23);
+        entrarButton.setBounds(410, 440, 190, 30);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/OIG.png"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 1030, 580);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSenhaActionPerformed
+    private void entrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarButtonActionPerformed
+        
+        login = loginFormField.getText();
+        String password = new String(LoginPasswordField.getPassword());
+        
+        try {
+            if(Autenticate(login, password)){
+                JOptionPane.showMessageDialog(null, "Login Realizado com sucesso");
+                String tipoUsuario = tipoUsu(login, password);
+                if (tipoUsuario != null && tipoUsuario.equals("A")) {
+                    TelaDeAdmin telausu = new TelaDeAdmin();
+                    this.dispose();
+                    telausu.setVisible(true);
+                }
+                else if (tipoUsuario != null && tipoUsuario.equals("C")){
+                    TelaDeUsuarios telausu = new TelaDeUsuarios();
+                    this.dispose();
+                    telausu.setVisible(true);
+                }
+                else {
+                   JOptionPane.showMessageDialog(null, "Tipo de usuario invalido!\ncontate um administrador do sistema.");
+                   loginFormField.setText("");
+                   LoginPasswordField.setText("");
+                }
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Dados inválidos ou inexistentes");
+                loginFormField.setText("");
+                LoginPasswordField.setText("");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+    }//GEN-LAST:event_entrarButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -100,10 +168,13 @@ public class TelaLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPasswordField LoginPasswordField;
     private javax.swing.JButton entrarButton;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JTextField loginFormField;
     private javax.swing.JLabel senha;
-    private javax.swing.JTextField txtSenha;
-    private javax.swing.JTextField txtUser;
     private javax.swing.JLabel user;
     // End of variables declaration//GEN-END:variables
 }

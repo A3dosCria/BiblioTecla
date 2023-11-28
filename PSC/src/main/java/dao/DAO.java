@@ -53,7 +53,7 @@ public class DAO {
     }
     
     public static List<Livro> lerLivroTable() throws SQLException{
-        String sql = "SELECT * FROM LIVROS";
+        String sql = "SELECT * FROM LIVROS ORDER BY NOTA DESC";
         Connection conn = null;
         PreparedStatement pstm = null;
         ResultSet rs = null;

@@ -60,12 +60,9 @@ public class TelaLogin extends javax.swing.JFrame {
         senha.setText("Senha:");
         getContentPane().add(senha);
         senha.setBounds(260, 290, 130, 30);
-
-        LoginPasswordField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         getContentPane().add(LoginPasswordField);
         LoginPasswordField.setBounds(260, 320, 490, 40);
 
-        loginFormField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         loginFormField.setToolTipText("");
         getContentPane().add(loginFormField);
         loginFormField.setBounds(260, 210, 490, 40);

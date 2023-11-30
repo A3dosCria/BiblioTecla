@@ -7,6 +7,8 @@ package View;
 import dao.DAO;
 import static dao.DAO.Autenticate;
 import static dao.DAO.tipoUsu;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,11 +17,14 @@ import javax.swing.JOptionPane;
  */
 public class TelaLogin extends javax.swing.JFrame {
     
+    Dimension tela = Toolkit.getDefaultToolkit().getScreenSize();
+    
     String login;
     /**
      * Creates new form Login
      */
     public TelaLogin() {
+        
         initComponents();
     }
 
@@ -44,7 +49,7 @@ public class TelaLogin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela de Login");
         setBackground(new java.awt.Color(255, 255, 255));
-        setLocation(new java.awt.Point(550, 250));
+        setLocation(new java.awt.Point(550, 220));
         setMinimumSize(new java.awt.Dimension(1035, 600));
         setResizable(false);
         getContentPane().setLayout(null);

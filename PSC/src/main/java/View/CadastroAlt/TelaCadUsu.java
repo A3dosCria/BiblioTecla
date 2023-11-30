@@ -8,6 +8,8 @@ import Model.Usuario;
 import View.TelaDeAdmin;
 import dao.DAO;
 import static dao.DAO.saveUsuario;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 
 
@@ -19,6 +21,7 @@ import javax.swing.JOptionPane;
  */
 public class TelaCadUsu extends javax.swing.JFrame {
     
+    Dimension tela = Toolkit.getDefaultToolkit().getScreenSize();
     Usuario usuario = new Usuario();
     DAO usuariodao = new DAO();
     
@@ -26,6 +29,8 @@ public class TelaCadUsu extends javax.swing.JFrame {
      * Creates new form ADM
      */
     public TelaCadUsu() {
+        
+        
         initComponents();
     }
     
@@ -61,7 +66,7 @@ public class TelaCadUsu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Usuários");
-        setLocation(new java.awt.Point(465, 200));
+        setLocation(new java.awt.Point(550, 220));
         setMinimumSize(new java.awt.Dimension(1035, 635));
         setResizable(false);
         getContentPane().setLayout(null);

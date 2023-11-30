@@ -8,6 +8,8 @@ import Model.Livro;
 import View.ListaLivros;
 import dao.DAO;
 import static dao.DAO.lerLivro;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,6 +21,8 @@ import javax.swing.JOptionPane;
  */
 public class TelaAltLivro extends javax.swing.JFrame {
 
+
+    Dimension tela = Toolkit.getDefaultToolkit().getScreenSize();
     static String id;
     Livro livro = new Livro();
     Livro livroLido = new Livro();
@@ -72,6 +76,7 @@ public class TelaAltLivro extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Livros");
+        setLocation(new java.awt.Point(550, 220));
         setMinimumSize(new java.awt.Dimension(1035, 600));
         setResizable(false);
         getContentPane().setLayout(null);

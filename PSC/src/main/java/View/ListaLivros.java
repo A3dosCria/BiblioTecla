@@ -13,6 +13,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 import static dao.DAO.lerLivroTable;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,10 +23,12 @@ import javax.swing.JOptionPane;
  */
 public class ListaLivros extends javax.swing.JFrame {
 
+    Dimension tela = Toolkit.getDefaultToolkit().getScreenSize();
     /**
      * Creates new form ListaLivros
      */
     public ListaLivros() throws SQLException {
+        
         initComponents();
         readTable();
         
@@ -56,7 +60,8 @@ public class ListaLivros extends javax.swing.JFrame {
 
         altLivroButton = new javax.swing.JButton();
         labelList = new javax.swing.JLabel();
-        remLivroButton = new javax.swing.JButton();
+        RemoveLivro = new javax.swing.JButton();
+        darNotaBttn = new javax.swing.JButton();
         addLivroButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaLivros = new javax.swing.JTable();
@@ -64,6 +69,7 @@ public class ListaLivros extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("BiblioTecla");
+        setLocation(new java.awt.Point(550, 220));
         setMinimumSize(new java.awt.Dimension(1035, 600));
         getContentPane().setLayout(null);
 
@@ -82,14 +88,23 @@ public class ListaLivros extends javax.swing.JFrame {
         getContentPane().add(labelList);
         labelList.setBounds(50, 96, 170, 20);
 
-        remLivroButton.setText("Excluir Livro");
-        remLivroButton.addActionListener(new java.awt.event.ActionListener() {
+        RemoveLivro.setText("Excluir Livro");
+        RemoveLivro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                remLivroButtonActionPerformed(evt);
+                RemoveLivroActionPerformed(evt);
             }
         });
-        getContentPane().add(remLivroButton);
-        remLivroButton.setBounds(550, 210, 430, 23);
+        getContentPane().add(RemoveLivro);
+        RemoveLivro.setBounds(550, 210, 430, 23);
+
+        darNotaBttn.setText("Avaliar Livro");
+        darNotaBttn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                darNotaBttnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(darNotaBttn);
+        darNotaBttn.setBounds(550, 250, 430, 23);
 
         addLivroButton.setText("Adicionar Livro");
         addLivroButton.addActionListener(new java.awt.event.ActionListener() {
@@ -105,14 +120,14 @@ public class ListaLivros extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Titulo", "Autor", "Nota", "Genero"
+                "ID", "Titulo", "Autor", "Média Nota", "Genero"
             }
         ) {
             Class[] types = new Class [] {
                 java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, true, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -163,14 +178,38 @@ public class ListaLivros extends javax.swing.JFrame {
         
     }//GEN-LAST:event_addLivroButtonActionPerformed
 
-    private void remLivroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remLivroButtonActionPerformed
+    private void RemoveLivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveLivroActionPerformed
         // TODO add your handling code here:
-        DefaultTableModel modelo = (DefaultTableModel) tabelaLivros.getModel();
-        DAO.removeLivro(tabelaLivros.getValueAt(tabelaLivros.getSelectedRow(), 0).toString());
-        modelo.removeRow(tabelaLivros.getSelectedRow());
+        if (tabelaLivros.getSelectedRow() == -1) {
+            JOptionPane.showMessageDialog(null, "Escolha um livro na tabela");
+        } else {
+            DefaultTableModel modelo = (DefaultTableModel) tabelaLivros.getModel();
+            DAO.removeLivro(tabelaLivros.getValueAt(tabelaLivros.getSelectedRow(), 0).toString());
+            modelo.removeRow(tabelaLivros.getSelectedRow());
+        }
         
 
-    }//GEN-LAST:event_remLivroButtonActionPerformed
+    }//GEN-LAST:event_RemoveLivroActionPerformed
+
+    private void darNotaBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_darNotaBttnActionPerformed
+        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+            if(tabelaLivros.getSelectedRow() == -1){
+                JOptionPane.showMessageDialog(null, "Escolha um livro na tabela");
+            }
+            else{
+                String id = tabelaLivros.getValueAt(tabelaLivros.getSelectedRow(), 0).toString();
+                DarNota telacad = new DarNota(id);
+                this.dispose();
+                telacad.setVisible(true);
+            }
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ListaLivros.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_darNotaBttnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -212,12 +251,13 @@ public class ListaLivros extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton RemoveLivro;
     private javax.swing.JButton addLivroButton;
     private javax.swing.JButton altLivroButton;
+    private javax.swing.JButton darNotaBttn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelList;
-    private javax.swing.JButton remLivroButton;
     private javax.swing.JTable tabelaLivros;
     // End of variables declaration//GEN-END:variables
 }

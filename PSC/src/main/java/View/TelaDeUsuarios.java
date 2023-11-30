@@ -4,6 +4,8 @@
  */
 package View;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -14,10 +16,12 @@ import java.util.logging.Logger;
  */
 public class TelaDeUsuarios extends javax.swing.JFrame {
 
+    Dimension tela = Toolkit.getDefaultToolkit().getScreenSize();
     /**
      * Creates new form TelaDeAdmin
      */
     public TelaDeUsuarios() {
+        
         initComponents();
     }
 
@@ -37,6 +41,7 @@ public class TelaDeUsuarios extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(550, 220));
         setMinimumSize(new java.awt.Dimension(1035, 600));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {

@@ -5,6 +5,8 @@
 package View;
 
 import View.CadastroAlt.TelaCadUsu;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -15,10 +17,12 @@ import java.util.logging.Logger;
  */
 public class TelaDeAdmin extends javax.swing.JFrame {
 
+    Dimension tela = Toolkit.getDefaultToolkit().getScreenSize();
     /**
      * Creates new form TelaDeAdmin
      */
     public TelaDeAdmin() {
+        
         initComponents();
     }
 
@@ -41,6 +45,8 @@ public class TelaDeAdmin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(550, 220));
+        setLocationByPlatform(true);
         setMinimumSize(new java.awt.Dimension(1030, 600));
         setPreferredSize(new java.awt.Dimension(1035, 635));
         setResizable(false);

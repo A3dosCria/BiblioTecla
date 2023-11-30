@@ -2,12 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package View.CadastroAlt;
+package View;
 
+import View.CadastroAlt.*;
 import Model.Livro;
-import static View.CadastroAlt.TelaAltLivro.id;
 import View.ListaLivros;
 import dao.DAO;
+import static dao.DAO.lerLivro;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.sql.SQLException;
@@ -19,19 +20,37 @@ import javax.swing.JOptionPane;
  *
  * @author vitor
  */
-public class TelaCadLivro extends javax.swing.JFrame {
+public class DarNota extends javax.swing.JFrame {
+
 
     Dimension tela = Toolkit.getDefaultToolkit().getScreenSize();
+    static String id;
     Livro livro = new Livro();
+    Livro livroLido = new Livro();
     /**
      * Creates new form Usuario
      */
     
     
-    public TelaCadLivro() {
-        
-        
+    public DarNota(String id) throws SQLException {
+        this.id = id;
+        livroLido = lerLivro(id);
         initComponents();
+        
+        txtAutor.setText(livroLido.getAutor());
+        txtTitleBook.setText(livroLido.getTitulo());
+        
+        if("Romance".equals(livroLido.getTipo())){
+            comboGen.setSelectedIndex(0);
+        } else if ("Ficção".equals(livroLido.getTipo())){
+            comboGen.setSelectedIndex(1);
+        } else {
+            comboGen.setSelectedIndex(2);
+        }
+        
+        boxNoteBook.setSelectedIndex(livroLido.getNota());
+
+        
     }
 
     /**
@@ -44,16 +63,16 @@ public class TelaCadLivro extends javax.swing.JFrame {
     private void initComponents() {
 
         imgFundo = new javax.swing.JLabel();
-        comboGen = new javax.swing.JComboBox<>();
-        genBook1 = new javax.swing.JLabel();
         titleBook = new javax.swing.JLabel();
         txtTitleBook = new javax.swing.JTextField();
         autorBook = new javax.swing.JLabel();
+        comboGen = new javax.swing.JComboBox<>();
         txtAutor = new javax.swing.JTextField();
         titleCad = new javax.swing.JLabel();
+        genBook = new javax.swing.JLabel();
         noteBook = new javax.swing.JLabel();
         boxNoteBook = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        CadLivro = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -63,22 +82,13 @@ public class TelaCadLivro extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        comboGen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Romance", "Ficção", "Técnico" }));
-        getContentPane().add(comboGen);
-        comboGen.setBounds(400, 310, 230, 30);
-
-        genBook1.setForeground(new java.awt.Color(0, 0, 0));
-        genBook1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        genBook1.setText("GÊNERO");
-        getContentPane().add(genBook1);
-        genBook1.setBounds(400, 290, 230, 16);
-
         titleBook.setForeground(new java.awt.Color(0, 0, 0));
         titleBook.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titleBook.setText("TÍTULO");
         getContentPane().add(titleBook);
         titleBook.setBounds(350, 140, 330, 16);
 
+        txtTitleBook.setEnabled(false);
         txtTitleBook.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTitleBookActionPerformed(evt);
@@ -93,6 +103,12 @@ public class TelaCadLivro extends javax.swing.JFrame {
         getContentPane().add(autorBook);
         autorBook.setBounds(350, 210, 330, 16);
 
+        comboGen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Romance", "Ficção", "Técnico" }));
+        comboGen.setEnabled(false);
+        getContentPane().add(comboGen);
+        comboGen.setBounds(400, 310, 240, 30);
+
+        txtAutor.setEnabled(false);
         txtAutor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAutorActionPerformed(evt);
@@ -104,15 +120,21 @@ public class TelaCadLivro extends javax.swing.JFrame {
         titleCad.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         titleCad.setForeground(new java.awt.Color(0, 0, 0));
         titleCad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        titleCad.setText("CADASTRO DE LIVROS");
+        titleCad.setText("ALTERAÇÃO DE LIVROS");
         getContentPane().add(titleCad);
         titleCad.setBounds(0, 80, 1030, 25);
+
+        genBook.setForeground(new java.awt.Color(0, 0, 0));
+        genBook.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        genBook.setText("GÊNERO");
+        getContentPane().add(genBook);
+        genBook.setBounds(400, 290, 240, 16);
 
         noteBook.setForeground(new java.awt.Color(0, 0, 0));
         noteBook.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         noteBook.setText("NOTA DE 0 A 10");
         getContentPane().add(noteBook);
-        noteBook.setBounds(470, 360, 90, 16);
+        noteBook.setBounds(470, 360, 100, 16);
 
         boxNoteBook.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
         boxNoteBook.addActionListener(new java.awt.event.ActionListener() {
@@ -121,16 +143,16 @@ public class TelaCadLivro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(boxNoteBook);
-        boxNoteBook.setBounds(470, 380, 90, 22);
+        boxNoteBook.setBounds(480, 380, 80, 22);
 
-        jButton1.setText("CADASTRAR LIVRO");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        CadLivro.setText("ALTERAR LIVRO");
+        CadLivro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                CadLivroActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(430, 430, 169, 40);
+        getContentPane().add(CadLivro);
+        CadLivro.setBounds(440, 430, 169, 40);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/OIG.png"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -151,8 +173,7 @@ public class TelaCadLivro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_boxNoteBookActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+    private void CadLivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadLivroActionPerformed
         try {
             // TODO add your handling code here:
             
@@ -160,16 +181,15 @@ public class TelaCadLivro extends javax.swing.JFrame {
             livro.setAutor(txtAutor.getText().trim());
             livro.setTipo(comboGen.getSelectedItem().toString());
             livro.setNota(Integer.parseInt(boxNoteBook.getSelectedItem().toString().trim()));
-            DAO.saveLivro(livro);
+            DAO.insertNota(id, livro.getNota());
+            JOptionPane.showMessageDialog(null, "A nota foi adicionada");
             ListaLivros listaLivros = new ListaLivros();
             this.dispose();
             listaLivros.setVisible(true);
         } catch (SQLException ex) {
-            Logger.getLogger(TelaAltLivro.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DarNota.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        JOptionPane.showMessageDialog(null, "O livro foi adicionado para sua lista!");
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_CadLivroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -188,14 +208,26 @@ public class TelaCadLivro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaCadLivro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DarNota.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaCadLivro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DarNota.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaCadLivro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DarNota.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaCadLivro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DarNota.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -204,18 +236,22 @@ public class TelaCadLivro extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaCadLivro().setVisible(true);
+                try {
+                    new DarNota(id).setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(DarNota.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CadLivro;
     private javax.swing.JLabel autorBook;
     private javax.swing.JComboBox<String> boxNoteBook;
     private javax.swing.JComboBox<String> comboGen;
-    private javax.swing.JLabel genBook1;
+    private javax.swing.JLabel genBook;
     private javax.swing.JLabel imgFundo;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel noteBook;
     private javax.swing.JLabel titleBook;

@@ -220,7 +220,7 @@ public class DAO {
             pstUpdateLivro.setString(1, livro.getTitulo());
             pstUpdateLivro.setString(2, livro.getAutor());
             pstUpdateLivro.setString(3, livro.getTipo());
-            pstUpdateLivro.setString(5, id);
+            pstUpdateLivro.setString(4, id);
 
             // Executa a atualização
             pstUpdateLivro.executeUpdate();
